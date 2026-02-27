@@ -1,0 +1,41 @@
+<div class="system-bg" *ngIf="portfolioData">
+  <nav class="navbar navbar-expand-lg system-nav">
+    <div class="container">
+      <a class="navbar-brand glow-blue">SYSTEM.MAILON</a>
+      <button class="btn-contact-red" (click)="abrirContato()">CONTACT ME</button>
+    </div>
+  </nav>
+
+  <div class="container hero-section">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <h1 class="glitch-text">MAILON AUGUSTO</h1>
+        <p class="hero-subtext">{{ portfolioData.bio || 'Desenvolvedor Full Stack' }}</p>
+      </div>
+
+      <div class="col-lg-5 d-flex justify-content-end">
+        <div class="status-window-mini">
+          <div class="status-header">PLAYER STATUS</div>
+          <div class="stat-line"><span>NOME</span> <span class="val">{{ portfolioData.nome }}</span></div>
+          <div class="stat-line"><span>USER</span> <span class="val">@{{ portfolioData.githubUser }}</span></div>
+          <div class="stat-line"><span>PROJETOS</span> <span class="val">{{ portfolioData.projetos?.length }}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let projeto of portfolioData.projetos">
+        <div class="quest-card">
+          <h3>{{ projeto.name }}</h3>
+          <p>{{ projeto.description || 'Sem descrição no GitHub.' }}</p>
+          <div class="quest-footer">
+            <span class="tech">{{ projeto.language }}</span>
+            <a [href]="projeto.html_url" target="_blank" class="btn-view">LINK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -48,6 +48,17 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "allowedHosts": ["all"]
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "mailon-status-system:build:production"
+            },
+            "development": {
+              "buildTarget": "mailon-status-system:build:development"
+            }
+          },
           "defaultConfiguration": "development"
         }
       }

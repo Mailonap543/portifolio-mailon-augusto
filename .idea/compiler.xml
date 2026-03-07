@@ -24,4 +24,7 @@
       <module name="mailon-augusto" options="-parameters" />
     </option>
   </component>
+  <component name="TypeScriptCompiler">
+    <option name="useServicePoweredTypesWasEnabledByExperiment" value="true" />
+  </component>
 </project>
